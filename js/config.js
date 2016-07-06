@@ -3,5 +3,8 @@
 
 angular.module('camomileApp.production', [])
     .constant('camomileConfig', {
-        backend: 'http://localhost:3000'
+        backend: 'http://camomile.mediaeval.niderb.fr'
+    })
+    .constant('campaignConfig', {
+        name: 'DEV_MediaEvalPersonDiscovery2016'
     });

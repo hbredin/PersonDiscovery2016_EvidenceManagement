@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Camomile</a>
+          <a class="navbar-brand" href="#">MediaEval Person Discovery 2016</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 
@@ -78,57 +78,24 @@
     </nav>
 
     <div class="container">
-      <div ng-show="user" class="container" ng-controller="BrowseCtrl">
-        <form class="form-horizontal">
-          <div class="form-group">
-            <label for="selectCorpus" class="col-sm-2 control-label">Corpus</label>
-            <div class="col-sm-10">
-              <select ng-options="corpus._id as corpus.name for corpus in browse.corpora"
-                      ng-model="browse.corpus"
-                      class="form-control" id="selectCorpus"></select>
+      <div ng-show="user" class="container" ng-controller="EvidenceCtrl">
+        <div class="row">
+          <div ng-repeat="name in evidence.names" class="col-md-2">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ name }}</h3>
+              </div>
+              <div class="panel-body">
+                <img src="{{ evidence.images[name] }}" width="100%" class="img-responsive" alt="Responsive image">
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="selectMedium" class="col-sm-2 control-label">Medium</label>
-            <div class="col-sm-10">
-              <select ng-options="medium._id as medium.name for medium in browse.media"
-                      ng-model="browse.medium"
-                      class="form-control" id="selectMedium"></select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="selectLayer" class="col-sm-2 control-label">Layer</label>
-            <div class="col-sm-10">
-              <select ng-options="layer._id as layer.name for layer in browse.layers"
-                      ng-model="browse.layer"
-                      class="form-control" id="selectLayer"></select>
-            </div>
-          </div>
-        </form>
-
-        <div ng-show="browse.medium" class="videogular-container">
-          <videogular>
-            <vg-media vg-src="browse.mediumSrc"></vg-media>
-            <vg-controls>
-              <vg-play-pause-button></vg-play-pause-button>
-              <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-              <vg-scrub-bar>
-                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              </vg-scrub-bar>
-              <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-              <vg-volume>
-                <vg-mute-button></vg-mute-button>
-                <vg-volume-bar></vg-volume-bar>
-              </vg-volume>
-            </vg-controls> 
-          </videogular>
         </div>
-      
-      </div>         
-  
+      </div>
+
       <hr>
       <footer>
-        <p>&copy; CNRS 2015</p>
+        <p>&copy; CNRS 2016</p>
       </footer>
     </div><!-- /container -->
 
@@ -137,21 +104,20 @@
 
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-        
+
         <script src="bower_components/videogular/videogular.js"></script>
         <script src="bower_components/videogular-controls/vg-controls.js"></script>
 
         <script src="bower_components/autofill-event/src/autofill-event.js"></script>
 
         <script src="js/config.js"></script>
-        
+
         <script src="js/services/camomile/fermata.js"></script>
         <script src="js/services/camomile/camomile.js"></script>
         <script src="js/services/camomile.js"></script>
-        
+
         <script src="js/controllers/camomile.js"></script>
-        <script src="js/controllers/browse.js"></script>
-        
+        <script src="js/controllers/evidence.js"></script>
         <script src="js/app.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

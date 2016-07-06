@@ -5,4 +5,10 @@ angular.module('camomile.services', [])
   Camomile.setURL(camomileConfig.backend);
   return Camomile;
 
+}])
+
+.factory('Campaign', ['campaignConfig', function(campaignConfig) {
+
+  return campaignConfig;
+
 }]);

@@ -7,8 +7,8 @@ Fork, update `js/config.js` and enjoy!
 * Get the webapp Javascript client source code:
 
   ```
-  $ git clone git@github.com:hbredin/evidence_management.git
-  $ cd evidence_management
+  $ git clone git@github.com:hbredin/PersonDiscovery2016_EvidenceManagement.git
+  $ cd PersonDiscovery2016_EvidenceManagement
   $ git submodule init
   $ git submodule update
   ```
